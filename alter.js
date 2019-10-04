@@ -8,6 +8,7 @@ function separateDate(birthDate) {
 
 function age(birthDate){
   separateDate(birthDate);
+  
   today = new Date();
 
   if (today.getMonth() +1 < birthMonth || (today.getMonth() + 1 === birthMonth && today.getDate() < birthDay)) { age =    today.getFullYear() - birthYear - 1;
@@ -19,6 +20,7 @@ function age(birthDate){
 
 function zodiacSign(birthDate) {
   separateDate(birthDate);
+  
   if (birthMonth === 3 && birthDay >= 21 || birthMonth === 4 && birthDay <= 20) {
     return 'Aries';
   } else if (birthMonth === 4 && birthDay >= 21 || birthMonth === 5 && birthDay <= 20) {
@@ -48,6 +50,7 @@ function zodiacSign(birthDate) {
 
 function birthStone(birthDate) {
   separateDate(birthDate);
+
   if (birthMonth === 1) {
     return 'Garnet';
   } else if (birthMonth === 2) {
@@ -76,11 +79,25 @@ function birthStone(birthDate) {
 }
 
 
+const readline =
+require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+})
 
-console.log(separateDate('12291978'))
-
-console.log(age('02011977'))
-
-console.log(zodiacSign('08081977'))
-
-console.log(birthStone('11011999'))
+readline.question("What is your birth date (mmddyyyy)?\n",
+  (birthDate) => {
+    // readline.question("Would you like to know age, Zodiac sign, or birthstone?")
+    // const birthDate = birthDate;
+    readline.setPrompt("Would you like to know 1 = age, 2 = Zodiac sign, or 3 = birthstone?\n");
+    readline.prompt();
+    readline.on('line', (userInput) => {
+      if (userInput.trim() == "1"){
+        console.log(age(birthDate));
+      } else if (userInput.trim() == "2"){
+        console.log(zodiacSign(birthDate));
+      } else if (userInput.trim() == "3"){
+        console.log(birthStone(birthDate));
+      } else {
+        console.log("Goodbye")}
+        readline.close()})})
