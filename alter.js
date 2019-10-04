@@ -100,4 +100,5 @@ readline.question("What is your birth date (mmddyyyy)?\n",
         console.log(birthStone(birthDate));
       } else {
         console.log("Goodbye")}
-        readline.close()})})
+        readline.close()})
+  })
