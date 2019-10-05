@@ -15,7 +15,7 @@ function age(birthDate){
   } else{
     age = (today.getFullYear() - birthYear);
   }
-  return age;
+  return 'You are ' + age + ' years old';
 }
 
 function zodiacSign(birthDate) {
@@ -89,7 +89,7 @@ readline.question("What is your birth date (mmddyyyy)?\n",
   (birthDate) => {
     // readline.question("Would you like to know age, Zodiac sign, or birthstone?")
     // const birthDate = birthDate;
-    readline.setPrompt("Would you like to know 1 = age, 2 = Zodiac sign, or 3 = birthstone?\n");
+    readline.setPrompt("What would you like to know?\n1 = age\n2 = Zodiac sign\n3 = birthstone?\n");
     readline.prompt();
     readline.on('line', (userInput) => {
       if (userInput.trim() == "1"){
