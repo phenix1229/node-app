@@ -15,66 +15,70 @@ function age(birthDate){
   } else{
     age = (today.getFullYear() - birthYear);
   }
-  return 'You are ' + age + ' years old';
+  return 'You are ' + age + ' years old.';
 }
 
 function zodiacSign(birthDate) {
   separateDate(birthDate);
+
+  sign = 'Your Zodiac sign is ';
   
   if (birthMonth === 3 && birthDay >= 21 || birthMonth === 4 && birthDay <= 20) {
-    return 'Aries';
+    return sign + 'Aries.';
   } else if (birthMonth === 4 && birthDay >= 21 || birthMonth === 5 && birthDay <= 20) {
-    return 'Taurus';
+    return sign + 'Taurus.';
   } else if (birthMonth === 5 && birthDay >= 21 || birthMonth === 6 && birthDay <= 20) {
-    return 'Gemini';
+    return sign + 'Gemini.';
   } else if (birthMonth === 6 && birthDay >= 21 || birthMonth === 7 && birthDay <= 22) {
-    return 'Cancer';
+    return sign + 'Cancer.';
   } else if (birthMonth === 7 && birthDay >= 23 || birthMonth === 8 && birthDay <= 22) {
-    return 'Leo';
+    return sign + 'Leo.';
   } else if (birthMonth === 8 && birthDay >= 23 || birthMonth === 9 && birthDay <= 22) {
-    return 'Virgo';
+    return sign + 'Virgo.';
   } else if (birthMonth === 9 && birthDay >= 23 || birthMonth === 10 && birthDay <= 22) {
-    return 'Libra';
+    return sign + 'Libra.';
   } else if (birthMonth === 10 && birthDay >= 23 || birthMonth === 11 && birthDay <= 22) {
-    return 'Scorpio';
+    return sign + 'Scorpio.';
   } else if (birthMonth === 11 && birthDay >= 23 || birthMonth === 12 && birthDay <= 21) {
-    return 'Sagittarius';
+    return sign + 'Sagittarius.';
   } else if (birthMonth === 12 && birthDay >= 22 || birthMonth === 1 && birthDay <= 19) {
-    return 'Capricorn';
+    return sign + 'Capricorn.';
   } else if (birthMonth === 1 && birthDay >= 20 || birthMonth === 2 && birthDay <= 19) {
-    return 'Aquarius';
+    return sign + 'Aquarius.';
   } else {
-    return 'Pisces';
+    return sign + 'Pisces.';
   }
 }
 
 function birthStone(birthDate) {
   separateDate(birthDate);
 
+  stone = 'Your birthstone is ';
+
   if (birthMonth === 1) {
-    return 'Garnet';
+    return stone + 'Garnet.';
   } else if (birthMonth === 2) {
-    return 'Amethyst';
+    return stone + 'Amethyst.';
   } else if (birthMonth === 3) {
-    return 'Aquamarine';
+    return stone + 'Aquamarine.';
   } else if (birthMonth === 4) {
-    return 'Diamond';
+    return stone + 'Diamond.';
   } else if (birthMonth === 5) {
-    return 'Emerald';
+    return stone + 'Emerald.';
   } else if (birthMonth === 6) {
-    return 'Alexandrite';
+    return stone + 'Alexandrite.';
   } else if (birthMonth === 7) {
-    return 'Ruby';
+    return stone + 'Ruby.';
   } else if (birthMonth === 8) {
-    return 'Peridot';
+    return stone + 'Peridot.';
   } else if (birthMonth === 9) {
-    return 'Sapphire';
+    return stone + 'Sapphire.';
   } else if (birthMonth === 10) {
-    return 'Pink Tourmaline';
+    return stone + 'Pink Tourmaline.';
   } else if (birthMonth === 11) {
-    return 'Citrine';
+    return stone + 'Citrine.';
   } else {
-    return 'Blue Topaz';
+    return stone + 'Blue Topaz.';
   }
 }
 
@@ -89,7 +93,7 @@ readline.question("What is your birth date (mmddyyyy)?\n",
   (birthDate) => {
     // readline.question("Would you like to know age, Zodiac sign, or birthstone?")
     // const birthDate = birthDate;
-    readline.setPrompt("What would you like to know?\n1 = age\n2 = Zodiac sign\n3 = birthstone?\n");
+    readline.setPrompt("What would you like to know?\n1 = Age\n2 = Zodiac sign\n3 = Birthstone?\n4 = All of the above\n");
     readline.prompt();
     readline.on('line', (userInput) => {
       if (userInput.trim() == "1"){
@@ -98,7 +102,9 @@ readline.question("What is your birth date (mmddyyyy)?\n",
         console.log(zodiacSign(birthDate));
       } else if (userInput.trim() == "3"){
         console.log(birthStone(birthDate));
+      } else if(userInput.trim() == '4'){
+        console.log(age(birthDate), zodiacSign(birthDate), birthStone(birthDate));
       } else {
         console.log("Goodbye")}
-        readline.close()})
+      readline.close()})
   })
