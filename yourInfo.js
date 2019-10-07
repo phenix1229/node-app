@@ -91,8 +91,6 @@ require('readline').createInterface({
 
 readline.question("What is your birth date (mmddyyyy)?\n",
   (birthDate) => {
-    // readline.question("Would you like to know age, Zodiac sign, or birthstone?")
-    // const birthDate = birthDate;
     readline.setPrompt("What would you like to know?\n1 = Age\n2 = Zodiac sign\n3 = Birthstone?\n4 = All of the above\n");
     readline.prompt();
     readline.on('line', (userInput) => {
