@@ -52,34 +52,34 @@ function zodiacSign(birthDate) {
 
 function birthStone(birthDate) {
   separateDate(birthDate);
-
-  stone = 'Your birthstone is ';
-
+  
   if (birthMonth === 1) {
-    return stone + 'Garnet.';
-  } else if (birthMonth === 2) {
-    return stone + 'Amethyst.';
-  } else if (birthMonth === 3) {
-    return stone + 'Aquamarine.';
-  } else if (birthMonth === 4) {
-    return stone + 'Diamond.';
-  } else if (birthMonth === 5) {
-    return stone + 'Emerald.';
-  } else if (birthMonth === 6) {
-    return stone + 'Alexandrite.';
-  } else if (birthMonth === 7) {
-    return stone + 'Ruby.';
-  } else if (birthMonth === 8) {
-    return stone + 'Peridot.';
-  } else if (birthMonth === 9) {
-    return stone + 'Sapphire.';
-  } else if (birthMonth === 10) {
-    return stone + 'Pink Tourmaline.';
-  } else if (birthMonth === 11) {
-    return stone + 'Citrine.';
-  } else {
-    return stone + 'Blue Topaz.';
-  }
+        stone = 'Garnet.';
+    } else if (birthMonth === 2) {
+        stone = 'Amethyst.';
+    } else if (birthMonth === 3) {
+        stone = 'Aquamarine.';
+    } else if (birthMonth === 4) {
+        stone = 'Diamond.';
+    } else if (birthMonth === 5) {
+        stone = 'Emerald.';
+    } else if (birthMonth === 6) {
+        stone = 'Alexandrite.';
+    } else if (birthMonth === 7) {
+        stone = 'Ruby.';
+    } else if (birthMonth === 8) {
+        stone = 'Peridot.';
+    } else if (birthMonth === 9) {
+        stone = 'Sapphire.';
+    } else if (birthMonth === 10) {
+        stone = 'Pink Tourmaline.';
+    } else if (birthMonth === 11) {
+        stone = 'Citrine.';
+    } else {
+        stone = 'Blue Topaz.';
+    }
+  reply = 'Your birthstone is ' + stone;
+  return reply; 
 }
 
 
